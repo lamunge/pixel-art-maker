@@ -1,0 +1,54 @@
+* {
+    font-family: 'VT323', monospace;
+    background-color: #272822;
+    color: #F8F8F2;
+}
+
+h1 {
+  font-size: 50px;
+  color: #ea85f2;
+}
+
+h2 {
+  color: #7edfea;
+}
+
+.grid-adjustments {
+  text-align: center;
+  font-size: 30px;
+}
+
+button {
+  width: 55px;
+  height: 20px;
+}
+
+#pixel-grid {
+  display: grid;
+  grid-template-columns: repeat(5,1fr); /*I have no idea what 1fr is, but this
+  forces the pixels into 5 columns!*/
+  width: 500px;
+  max-height: 500px;
+  grid-gap: 0px;
+  margin: auto;
+}
+
+.pixel {
+  background-color: #F8F8F2;
+  width: 100%;
+  padding-bottom: 100%;
+  /*copy pasted from css-trics. Gives pixels a border without increasing their
+  height and width, using inset shadows (not supported in all browsers)*/
+  -webkit-box-shadow:
+     inset -1px 0   0 black,
+     inset  0  -1px 0 black,
+     inset  0   1px 0 black;
+  -moz-box-shadow:
+     inset -1px 0   0 black,
+     inset  0  -1px 0 black,
+     inset  0   1px 0 black;
+  box-shadow:
+     inset -1px 0   0 black,
+     inset  0  -1px 0 black,
+     inset  0   1px 0 black;
+}

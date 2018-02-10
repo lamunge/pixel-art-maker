@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Pixel Art Maker</title>
+  <link href="styles.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Pixel Art Maker</h1>
+  <h2>by Potato Lamunge</h2>
+  <form class="grid-adjustments">
+    Grid Height: <input type="text" id="grid-height"/> Grid Width: <input type="text"
+    id="grid-width"/> <input type="submit" value="Submit" onclick="makeGrid(event)"/>
+  </form>
+  <p style="text-align:center;">
+    I wouldn't go past 75x75 if I were you.
+  </p>
+  <div style="text-align:center">
+    Color: <input type="color" class='color-picker'/>
+    <button onclick="undo()">Undo</button>
+  </div>
+  <br />
+  <div id="pixel-grid">
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+</div>
+<script src="script.js"></script>
+</body>
