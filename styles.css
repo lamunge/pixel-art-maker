@@ -13,7 +13,7 @@ h2 {
   color: #7edfea;
 }
 
-#grid-adjustments {
+form {
   text-align: center;
   font-size: 30px;
 }
@@ -23,13 +23,13 @@ button {
   height: 20px;
 }
 
-#pixel-grid {
+.pixel-grid {
   display: grid;
   grid-template-columns: repeat(5,1fr); /*I have no idea what 1fr is, but this
   forces the pixels into 5 columns!*/
   width: 500px;
   max-height: 500px;
-  grid-gap: 0px;
+  grid-gap: 0;
   margin: auto;
 }
 
