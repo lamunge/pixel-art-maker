@@ -13,40 +13,49 @@
     Grid Height: <input type="text" id="grid-height"/> Grid Width: <input type="text"
     id="grid-width"/> <input type="submit" value="Submit" onclick="makeGrid(event)"/>
   </form>
-  <p style="text-align:center;">
-    I wouldn't go past 75x75 if I were you.
-  </p>
   <div style="text-align:center">
     Color: <input type="color" id="color-picker"/>
     <button onclick="undo()">Undo</button>
   </div>
   <br>
-  <div id="pixel-grid" class="pixel-grid">
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-    <div class="pixel"></div>
-</div>
+
+  <table id="pixel-grid" class="pixel-grid">
+    <tr>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+  </tr>
+  <tr>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+  </tr>
+  <tr>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+  </tr>
+  <tr>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+  </tr>
+  <tr>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+    <td><div class="pixel"></div></td>
+  </tr>
+
+  </table>
 <script src="script.js"></script>
 </body>

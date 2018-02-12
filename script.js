@@ -11,15 +11,19 @@ document.getElementById('color-picker').addEventListener('change', function () {
 document.getElementById('pixel-grid').addEventListener('mousedown',function (e) {
   e.preventDefault(); //stops drag and drop working, which messed up the mouseIsDown logic
   const targetChild = event.target; //to figure out which pixel triggered the event
-  colorState = saveColorState(); //in case you want to undo this round of coloring
-  targetChild.style.setProperty('background-color',color);
-  mouseIsDown = true;
+  if (targetChild.className === 'pixel') {
+    colorState = saveColorState(); //in case you want to undo this round of coloring
+    targetChild.style.setProperty('background-color',color);
+    mouseIsDown = true;
+  }
 });
 
 document.getElementById('pixel-grid').addEventListener('mousemove',function () {
   if (mouseIsDown) {
     const targetChild = event.target;
-    targetChild.style.setProperty('background-color', color);
+    if (targetChild.className === 'pixel') {
+      targetChild.style.setProperty('background-color', color);
+    }
   }
 });
 
@@ -36,20 +40,25 @@ function removeSnark() {
   }
 }
 
-//spawns the correct number of pixels
-function spawnPixels(numberToSpawn) {
+function buildTable(height, width) {
 
   //removes all the existing pixels
-  const pixelGrid = document.getElementById('pixel-grid');
+  let pixelGrid = document.getElementById('pixel-grid');
   while (pixelGrid.firstChild) {
     pixelGrid.removeChild(pixelGrid.firstChild);
   }
 
-  //creates the correct number of new pixels
-  for(var i=0;i<numberToSpawn;i++) {
-    let pixel = document.createElement('div');
-    pixel.className = 'pixel';
-    document.getElementById('pixel-grid').appendChild(pixel);
+//TODO: make this work. right now nothing appears on screen. might be a styling issue though
+  for (let i=0;i<height;i++) {
+    let tableRow = document.createElement('tr');
+    pixelGrid.appendChild(tableRow);
+    for (let i=0;i<width;i++) {
+      let tableCell = document.createElement('td');
+      tableRow.appendChild(tableCell);
+      let pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      tableCell.appendChild(pixel);
+    }
   }
 }
 
@@ -73,19 +82,10 @@ function makeGrid(event) {
     document.getElementById('grid-adjustments').append(snark);
     return;
   }
-  if ((height>75 && width>75) || (height>99 || width >99)) {
-    let snark = document.createElement("p");
-    snark.innerHTML = 'Don\'t say I didn\'t warn you.';
-    document.getElementById('grid-adjustments').append(snark);
-  }
 
   colorState = []; //reset the color state for the new grid
 
-  spawnPixels(height*width);
-
-  //organizes pixels into correct number of columns
-  document.getElementById('pixel-grid').style.setProperty(
-    'grid-template-columns','repeat('+width+',1fr)');
+  buildTable(height,width);
 }
 
 //saves the color state of every pixel to an array, for reloading if user presses undo
